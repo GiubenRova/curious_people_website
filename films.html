@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="it">
 <head>
   <meta charset="utf-8">
@@ -6,16 +7,19 @@
   <title>Curious People - Short Films</title>
 
   <link rel="icon" href="assets/Icons/favicon.svg" type="image/svg+xml">
-  
+
   <style>
     :root {
       --bg: #dedede;
       --text: #171717;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html, body {
+    html,
+    body {
       margin: 0;
       width: 100%;
       min-height: 100%;
@@ -27,19 +31,6 @@
       color: var(--text);
       font-family: Ubuntu, Helvetica, sans-serif;
       text-transform: lowercase;
-    }
-
-    .top-line {
-      position: fixed;
-      inset: 0 0 auto 0;
-      height: 10px;
-      background: linear-gradient(
-        90deg,
-        #833AB4 0%,
-        #FD1D1D 50%,
-        #FCB045 100%
-      );
-      z-index: 10;
     }
 
     header {
@@ -73,20 +64,33 @@
       padding: 80px 24px 40px;
     }
 
-    /*
-      LOGO:
-      Sostituisci semplicemente "assets/logo.png" con il tuo PNG.
-      Il PNG viene mantenuto come immagine, senza testo HTML.
-    */
-    .logo {
-      display: block;
-      width: min(58vw, 900px);
-      max-height: 42vh;
-      object-fit: contain;
-      object-position: center;
-      user-select: none;
+    .film-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-size: clamp(28px, 4vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
     }
 
+    .film-list li {
+      margin-bottom: 18px;
+    }
+
+    .film-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .film-list a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .film-list a:hover {
+      opacity: 0.55;
+    }
     .bottom-left,
     .bottom-right {
       position: fixed;
@@ -96,8 +100,13 @@
       z-index: 5;
     }
 
-    .bottom-left { left: 18px; }
-    .bottom-right { right: 18px; }
+    .bottom-left {
+      left: 18px;
+    }
+
+    .bottom-right {
+      right: 18px;
+    }
 
     .menu-panel {
       position: fixed;
@@ -107,11 +116,13 @@
       align-items: center;
       padding: 10vw;
       transform: translateX(-100%);
-      transition: transform .45s cubic-bezier(.77,0,.18,1);
+      transition: transform 0.45s cubic-bezier(.77, 0, .18, 1);
       z-index: 20;
     }
 
-    .menu-panel.open { transform: translateX(0); }
+    .menu-panel.open {
+      transform: translateX(0);
+    }
 
     .menu-panel nav {
       display: flex;
@@ -124,7 +135,7 @@
       text-decoration: none;
       font-size: clamp(32px, 5vw, 72px);
       font-weight: 900;
-      letter-spacing: -.04em;
+      letter-spacing: -0.04em;
     }
 
     .close {
@@ -133,12 +144,12 @@
       top: 30px;
     }
 
-  @media (max-width: 700px) {
-    .bottom-right {
-      display: none;
-    }
+    @media (max-width: 700px) {
+      .bottom-right {
+       display: none;
+      }
 
-    header {
+      header {
       padding-left: 18px;
     }
 
@@ -150,118 +161,84 @@
 </head>
 
 <body>
-  <div class="top-line"></div>
 
   <header>
     <button class="menu-button" id="openMenu">MENU</button>
-    <a
-    href="index.html"
-    aria-label="home"
+
+
+<a
+  href="index.html"
+  aria-label="home"
+  style="
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+  "
+>
+  <img
+    src="assets/Icons/peterwood.png"
+    alt="home"
     style="
-      position: fixed;
-      top: 24px;
-      right: 24px;
-      z-index: 1000;
-      display: flex;
-      align-items: right;
-      justify-content: center;
-      width: 56px;
-      height: 56px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     "
   >
-    <img
-      src="assets/Icons/peterwood.png"
-      alt="home"
-      style="
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      "
-    >
-  </a>
+</a>
+
+
   </header>
 
   <main>
-    <main
-    style="
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 80px 24px 40px;
-    font-family: Ubuntu, Helvetica, sans-serif;
-  "
-    >
-  <ul
-    style="
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      font-weight: 900
-      font-family: Ubuntu, Helvetica, sans-serif;
-      font-size: 1.2rem;
-    "
-  >
-    <li style="margin-bottom: 18px;">
-      <a
-        href="saddled.html"
-        style="
-          color: inherit;
-          text-decoration: none;
-          transition: opacity 0.2s ease;
-        "
-        onmouseover="this.style.opacity='0.55'"
-        onmouseout="this.style.opacity='1'"
-      >
-        Saddled (2026)
-      </a>
-    </li>
+    <ul class="film-list">
 
-    <li style="margin-bottom: 18px;">
-      <a
-        href="#film-two"
-        style="
-          color: inherit;
-          text-decoration: none;
-          transition: opacity 0.2s ease;
-        "
-        onmouseover="this.style.opacity='0.55'"
-        onmouseout="this.style.opacity='1'"
-      >
-        Untitled Short Film #2 (2027)
-      </a>
-    </li>
 
-    <li style="margin-bottom: 18px;">
-      <a
-        href="#film-three"
-        style="
-          color: inherit;
-          text-decoration: none;
-          transition: opacity 0.2s ease;
-        "
-        onmouseover="this.style.opacity='0.55'"
-        onmouseout="this.style.opacity='1'"
-      >
-        Untitled Short Film #3 (2027)
-      </a>
-    </li>
-  </ul>
+  <li>
+    <a href="saddled.html">
+      Saddled (2026)
+    </a>
+  </li>
+
+  <li>
+    <a href="#film-two">
+      Untitled Short Film #2 (2027)
+    </a>
+  </li>
+
+  <li>
+    <a href="#film-three">
+      Untitled Short Film #3 (2027)
+    </a>
+  </li>
+
+</ul>
+
+
   </main>
 
-  <div class="bottom-left">SHORT FILM PRODUCTIONS IN LONDON</div>
+  <div class="bottom-left">
+    SHORT FILM PRODUCTIONS IN LONDON
+  </div>
 
   <aside class="menu-panel" id="menuPanel" aria-hidden="true">
     <button class="close" id="closeMenu">CLOSE</button>
-    <nav>
-      <a href="index.html">home</a>
-      <a href="films.html">film(s)</a>
-      <a href="about.html">about</a>
-      <a href="contact.html">contact</a>
-    </nav>
+
+
+<nav>
+  <a href="index.html">home</a>
+  <a href="films.html">film(s)</a>
+  <a href="about.html">about</a>
+  <a href="contact.html">contact</a>
+</nav>
+
+
   </aside>
 
   <script>
@@ -277,5 +254,6 @@
       panel.setAttribute('aria-hidden', 'true');
     });
   </script>
+
 </body>
 </html>
