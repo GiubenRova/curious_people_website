@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Untitled Short Film #2 (2027) - Curious People</title>
+
+  <link rel="icon" href="assets/Icons/favicon.svg" type="image/svg+xml">
+
+  <style>
+    :root {
+      --bg: #dedede;
+      --text: #171717;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Ubuntu, Helvetica, sans-serif;
+      text-transform: lowercase;
+    }
+
+    header {
+      position: fixed;
+      left: 0;
+      top: 10px;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      padding: 0 22px;
+      z-index: 5;
+    }
+
+    .menu-button,
+    .close {
+      appearance: none;
+      border: 0;
+      background: none;
+      color: inherit;
+      font: 700 11px/1 Ubuntu, Helvetica, sans-serif;
+      cursor: pointer;
+      text-transform: lowercase;
+      padding: 10px 0;
+    }
+
+    main {
+      width: 100%;
+      padding: 150px 24px 100px;
+    }
+
+    .film-info {
+      width: min(760px, 100%);
+      margin-left: 8vw;
+    }
+
+    .film-title {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 82px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .film-year {
+      margin: 12px 0 50px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .film-details {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .film-details p {
+      margin: 0 0 8px;
+    }
+
+    .film-details section {
+      margin-bottom: 42px;
+    }
+
+    .film-details h2 {
+      margin: 0 0 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .film-details .description {
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    .credit {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 20px;
+      margin-bottom: 5px;
+    }
+
+    .credit-role {
+      font-weight: 400;
+      opacity: 0.65;
+    }
+
+    .credit-name {
+      font-weight: 400;
+    }
+
+    .bottom-left {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      font-size: 10px;
+      font-weight: 700;
+      z-index: 5;
+    }
+
+    .menu-panel {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      padding: 10vw;
+      transform: translateX(-100%);
+      transition: transform 0.45s cubic-bezier(.77, 0, .18, 1);
+      z-index: 20;
+    }
+
+    .menu-panel.open {
+      transform: translateX(0);
+    }
+
+    .menu-panel nav {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .menu-panel a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: clamp(32px, 5vw, 72px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .close {
+      position: absolute;
+      left: 22px;
+      top: 30px;
+    }
+
+    @media (max-width: 700px) {
+
+      main {
+        padding: 130px 24px 90px;
+      }
+
+      .film-info {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .film-title {
+        font-size: clamp(42px, 14vw, 64px);
+      }
+
+      .film-year {
+        margin-bottom: 40px;
+      }
+
+      .film-details {
+        font-size: 13px;
+      }
+
+      .credit {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 15px;
+      }
+
+      .credit-role {
+        margin-bottom: 1px;
+      }
+
+      header {
+        padding-left: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <button class="menu-button" id="openMenu">
+      MENU
+    </button>
+
+    <a
+      href="index.html"
+      aria-label="home"
+      style="
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+      "
+    >
+      <img
+        src="assets/Icons/peterwood.png"
+        alt="home"
+        style="
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        "
+      >
+    </a>
+
+  </header>
+
+
+  <main>
+
+    <div class="film-info">
+
+      <h1 class="film-title">
+        Untitled Short Film #2
+      </h1>
+
+      <div class="film-year">
+        2027
+      </div>
+
+
+      <div class="film-details">
+
+        <section>
+
+          <p>
+            short film
+          </p>
+
+          <p>
+            runtime: XX min
+          </p>
+
+          <p>
+            genre: XXXXX
+          </p>
+
+          <p>
+            country: United Kingdom
+          </p>
+
+          <p>
+            language: English
+          </p>
+
+        </section>
+
+
+        <section>
+
+          <h2>
+            logline
+          </h2>
+
+          <p class="description">
+            Add a short one or two sentence description of the film here.
+          </p>
+
+        </section>
+
+
+        <section>
+
+          <h2>
+            synopsis
+          </h2>
+
+          <p class="description">
+            Add the synopsis of Untitled Short Film #2 here. This can be a slightly longer
+            description of the story, characters and central idea of the film.
+          </p>
+
+        </section>
+
+
+        <section>
+
+          <h2>
+            credits
+          </h2>
+
+          <div class="credit">
+            <div class="credit-role">director</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">writer</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">producer</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">executive producer</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">cinematography</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">editor</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">production design</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">sound</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">music</div>
+            <div class="credit-name">Name Surname</div>
+          </div>
+
+        </section>
+
+
+        <section>
+
+          <h2>
+            cast
+          </h2>
+
+          <div class="credit">
+            <div class="credit-role">character name</div>
+            <div class="credit-name">Actor Name</div>
+          </div>
+
+          <div class="credit">
+            <div class="credit-role">character name</div>
+            <div class="credit-name">Actor Name</div>
+          </div>
+
+        </section>
+
+
+        <section>
+
+          <h2>
+            production
+          </h2>
+
+          <p>
+            produced by Curious People
+          </p>
+
+          <p>
+            filmed in XXXXX
+          </p>
+
+          <p>
+            production year: 2027
+          </p>
+
+        </section>
+
+
+        <section>
+
+          <h2>
+            technical
+          </h2>
+
+          <p>
+            format: XXXXX
+          </p>
+
+          <p>
+            aspect ratio: XX:XX
+          </p>
+
+          <p>
+            colour / black & white
+          </p>
+
+          <p>
+            sound: stereo / 5.1
+          </p>
+
+        </section>
+
+
+        <section>
+
+          <h2>
+            festivals & awards
+          </h2>
+
+          <p>
+            Festival Name — selection / award — 2026
+          </p>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <div class="bottom-left">
+    SHORT FILM PRODUCTIONS IN LONDON
+  </div>
+
+
+  <aside
+    class="menu-panel"
+    id="menuPanel"
+    aria-hidden="true"
+  >
+
+    <button class="close" id="closeMenu">
+      CLOSE
+    </button>
+
+    <nav>
+      <a href="index.html">home</a>
+      <a href="films.html">film(s)</a>
+      <a href="about.html">about</a>
+      <a href="contact.html">contact</a>
+    </nav>
+
+  </aside>
+
+
+  <script>
+
+    const panel = document.getElementById('menuPanel');
+
+    document
+      .getElementById('openMenu')
+      .addEventListener('click', () => {
+
+        panel.classList.add('open');
+        panel.setAttribute('aria-hidden', 'false');
+
+      });
+
+    document
+      .getElementById('closeMenu')
+      .addEventListener('click', () => {
+
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+
+      });
+
+  </script>
+
+</body>
+</html>
