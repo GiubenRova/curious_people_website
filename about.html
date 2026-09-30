@@ -1,10 +1,10 @@
 <!doctype html>
-
 <html lang="it">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Curious People - Short Films</title>
+
+  <title>About - Curious People</title>
 
   <link rel="icon" href="assets/Icons/favicon.svg" type="image/svg+xml">
 
@@ -14,18 +14,26 @@
       --text: #171717;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html, body {
+    html {
       margin: 0;
       width: 100%;
       min-height: 100%;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     body {
+      margin: 0;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+
       background: var(--bg);
       color: var(--text);
+
       font-family: Ubuntu, Helvetica, sans-serif;
       text-transform: lowercase;
     }
@@ -34,171 +42,272 @@
       position: fixed;
       left: 0;
       top: 10px;
+
       width: 100%;
       height: 70px;
+
       display: flex;
       align-items: center;
+
       padding: 0 22px;
+
       z-index: 5;
     }
 
     .menu-button,
     .close {
       appearance: none;
+
       border: 0;
       background: none;
+
       color: inherit;
+
       font: 700 11px/1 Ubuntu, Helvetica, sans-serif;
+
       cursor: pointer;
       text-transform: lowercase;
+
       padding: 10px 0;
     }
 
     main {
+      width: 100%;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 80px 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 120px 24px 100px;
     }
 
-    .logo {
-      display: block;
-      width: min(42vw, 650px);
-      max-height: 42vh;
-      object-fit: contain;
-      object-position: center;
-      user-select: none;
+    .about-box {
+      width: min(700px, 100%);
+
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.7;
+
+      text-align: justify;
+      text-justify: inter-word;
     }
 
-    .bottom-left,
-    .bottom-right {
+    .about-box p {
+      margin: 0 0 22px;
+    }
+
+    .about-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bottom-left {
       position: fixed;
+
+      left: 18px;
       bottom: 18px;
+
       font-size: 10px;
       font-weight: 700;
+
       z-index: 5;
     }
-
-    .bottom-left { left: 18px; }
-    .bottom-right { right: 18px; }
 
     .menu-panel {
       position: fixed;
       inset: 0;
+
       background: var(--bg);
+
       display: flex;
       align-items: center;
+
       padding: 10vw;
+
       transform: translateX(-100%);
-      transition: transform .45s cubic-bezier(.77,0,.18,1);
+      transition: transform 0.45s cubic-bezier(.77, 0, .18, 1);
+
       z-index: 20;
     }
 
-    .menu-panel.open { transform: translateX(0); }
+    .menu-panel.open {
+      transform: translateX(0);
+    }
 
     .menu-panel nav {
       display: flex;
       flex-direction: column;
+
       gap: 18px;
     }
 
     .menu-panel a {
       color: var(--text);
       text-decoration: none;
+
       font-size: clamp(32px, 5vw, 72px);
       font-weight: 900;
-      letter-spacing: -.04em;
+
+      letter-spacing: -0.04em;
     }
 
     .close {
       position: absolute;
+
       left: 22px;
       top: 30px;
     }
 
     @media (max-width: 700px) {
-      .logo {
-        width: min(65vw, 480px);
-        max-height: 30vh;
+
+      header {
+        padding-left: 18px;
       }
 
-      .bottom-right { display: none; }
-      header { padding-left: 18px; }
+      main {
+        padding: 120px 22px 90px;
+        align-items: flex-start;
+      }
+
+      .about-box {
+        width: 100%;
+
+        font-size: 15px;
+        line-height: 1.65;
+      }
     }
   </style>
-
 </head>
 
 <body>
 
   <header>
-    <button class="menu-button" id="openMenu">MENU</button>
 
-<a
-  href="index.html"
-  aria-label="home"
-  style="
-    position: fixed;
-    top: 24px;
-    right: 24px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 56px;
-    height: 56px;
-  "
->
-  <img
-    src="assets/Icons/peterwood.png"
-    alt="home"
-    style="
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    "
-  >
-</a>
+    <button
+      class="menu-button"
+      id="openMenu"
+    >
+      MENU
+    </button>
+
+    <a
+      href="index.html"
+      aria-label="home"
+      style="
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        z-index: 1000;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 56px;
+        height: 56px;
+      "
+    >
+      <img
+        src="assets/Icons/peterwood.png"
+        alt="home"
+        style="
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        "
+      >
+    </a>
 
   </header>
 
+
   <main>
-    <img
-      class="logo"
-      src="assets/logo.png"
-      alt="Logo Curious People"
-    >
+
+    <div class="about-box">
+
+      <p>
+        Curious People is an independent film production company focused on
+        short films, visual storytelling and original cinematic work.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+        posuere erat a ante venenatis dapibus posuere velit aliquet.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere
+        consectetur est at lobortis. Donec ullamcorper nulla non metus auctor
+        fringilla. Cras mattis consectetur purus sit amet fermentum. Maecenas
+        faucibus mollis interdum.
+      </p>
+
+      <p>
+        Vestibulum id ligula porta felis euismod semper. Aenean lacinia
+        bibendum nulla sed consectetur. Nullam quis risus eget urna mollis
+        ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod.
+      </p>
+
+      <p>
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
+        lacinia odio sem nec elit. Praesent commodo cursus magna, vel
+        scelerisque nisl consectetur et. Curabitur blandit tempus porttitor.
+      </p>
+
+    </div>
+
   </main>
 
-  <div class="bottom-left">SHORT FILM PRODUCTIONS IN LONDON</div>
 
-  <aside class="menu-panel" id="menuPanel" aria-hidden="true">
-    <button class="close" id="closeMenu">CLOSE</button>
+  <div class="bottom-left">
+    SHORT FILM PRODUCTIONS IN LONDON
+  </div>
 
-<nav>
-  <a href="index.html">home</a>
-  <a href="films.html">film(s)</a>
-  <a href="about.html">about</a>
-  <a href="contact.html">contact</a>
-</nav>
+
+  <aside
+    class="menu-panel"
+    id="menuPanel"
+    aria-hidden="true"
+  >
+
+    <button
+      class="close"
+      id="closeMenu"
+    >
+      CLOSE
+    </button>
+
+    <nav>
+      <a href="index.html">home</a>
+      <a href="films.html">film(s)</a>
+      <a href="about.html">about</a>
+      <a href="contact.html">contact</a>
+    </nav>
 
   </aside>
 
+
   <script>
+
     const panel = document.getElementById('menuPanel');
 
-    document.getElementById('openMenu').addEventListener('click', () => {
-      panel.classList.add('open');
-      panel.setAttribute('aria-hidden', 'false');
-    });
+    document
+      .getElementById('openMenu')
+      .addEventListener('click', () => {
 
-    document.getElementById('closeMenu').addEventListener('click', () => {
-      panel.classList.remove('open');
-      panel.setAttribute('aria-hidden', 'true');
-    });
+        panel.classList.add('open');
+        panel.setAttribute('aria-hidden', 'false');
+
+      });
+
+    document
+      .getElementById('closeMenu')
+      .addEventListener('click', () => {
+
+        panel.classList.remove('open');
+        panel.setAttribute('aria-hidden', 'true');
+
+      });
+
   </script>
 
 </body>
 </html>
-
